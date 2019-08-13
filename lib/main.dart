@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.system,
-      title: 'Flutter Demo',
+      title: 'Mach die Flutter',
       theme: ThemeData(
         // This is the theme of your application.
         //
