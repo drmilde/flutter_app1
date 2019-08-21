@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/pages/ContactListPage.dart';
+import 'package:flutter_app1/pages/InputPage.dart';
 
 class CustomDrawer extends StatefulWidget {
   final String title;
@@ -22,21 +24,32 @@ class _CustomDrawerState extends State<CustomDrawer> {
       child: ListView(
         children: <Widget>[
           DrawerHeader(
-            child: Text("Custom Drawer"),
+            child: Text("Die Geburtstags App"),
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
           ),
           ListTile(
-            title: Text("Erster Eintrag"),
-            onTap: () {},
+            title: Text("Neuer Eintrag"),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => InputPage(
+                            title: "Input, Baby",
+                          )));
+            },
           ),
           ListTile(
-            title: Text("Zweiter Eintrag"),
-            onTap: () {},
+            title: Text("Kontakte übernehmen"),
+            onTap: () {
+              // open contacts page
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ContactListPage()));
+            },
           ),
           ListTile(
-            title: Text("Close"),
+            title: Text("Schliessen"),
             onTap: () {
               Navigator.pop(context);
             },
