@@ -65,6 +65,9 @@ class _HomePageState extends State<HomePage> {
               scale: 5.0,
               child: Icon(Icons.cake),
             ),
+            SizedBox(
+              height: 60,
+            ),
             Text(
               'Die Geburtstags-App',
             ),
