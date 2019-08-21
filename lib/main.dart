@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/pages/InputPage.dart';
+import 'package:flutter_app1/widgets/CustomDrawer.dart';
+
+// Import package
+import 'package:contacts_service/contacts_service.dart';
 
 void main() => runApp(BirthdayCalenderApp());
 
 class BirthdayCalenderApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,11 +34,29 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
 
+  // Get all contacts on device
+
+  void doit() async {
+    Iterable<Contact> _contacts = await ContactsService.getContacts();
+    print(_contacts);
+  }
+
+
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
-    Navigator.push(context, MaterialPageRoute(builder: (context) => InputPage(title: "Input, Baby",)));
+
+    // doit();
+
+    /*
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => InputPage(
+                  title: "Input, Baby",
+                )));
+     */
   }
 
   @override
@@ -42,24 +65,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-              title: Text("Erster Eintrag"),
-              onTap: (){},
-            ),
-            ListTile(
-              title: Text("Zweiter Eintrag"),
-              onTap: (){},
-            ),
-            ListTile(
-              title: Text("Dritter Eintrag"),
-              onTap: (){},
-            ),
-          ],
-        ),
-      ),
+      drawer: CustomDrawer(title: "toll"),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
