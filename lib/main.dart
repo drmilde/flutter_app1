@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/pages/InputPage.dart';
+import 'package:flutter_app1/pages/ContactListPage.dart';
 import 'package:flutter_app1/widgets/CustomDrawer.dart';
 
 // Import package
 import 'package:contacts_service/contacts_service.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+class PermissionService {
+  final PermissionHandler _permissionHandler = PermissionHandler();
+
+  Future<bool> _requestPermission(PermissionGroup permission) async {
+    var result = await _permissionHandler.requestPermissions([permission]);
+
+    if (result[permission] == PermissionStatus.granted) {
+      return true;
+    }
+    return false;
+  }
+
+  Future<bool> requestContactsPermission() async {
+    return _requestPermission(PermissionGroup.contacts);
+  }
+}
 
 void main() => runApp(BirthdayCalenderApp());
 
@@ -36,19 +55,32 @@ class _HomePageState extends State<HomePage> {
 
   // Get all contacts on device
 
-  void doit() async {
-    Iterable<Contact> _contacts = await ContactsService.getContacts();
-    print(_contacts);
+  void requestContacts() async {
+    PermissionService ps = PermissionService();
+
+    var granted = await ps.requestContactsPermission();
+    print("permission are {$granted}");
+
+    if (granted) {
+      Iterable<Contact> _contacts = await ContactsService.getContacts();
+
+      for (Contact value in _contacts) {
+        String dn = value.displayName;
+        print("name ist {$dn} \n");
+      }
+    }
   }
 
-
   void _incrementCounter() {
+    // increase counter
     setState(() {
       _counter++;
     });
 
-    // doit();
+    // request contacts
+    requestContacts();
 
+    // open input page
     /*
     Navigator.push(
         context,
@@ -56,7 +88,11 @@ class _HomePageState extends State<HomePage> {
             builder: (context) => InputPage(
                   title: "Input, Baby",
                 )));
-     */
+    */
+
+    // open contacts page
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ContactListPage()));
   }
 
   @override
