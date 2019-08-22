@@ -25,7 +25,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
       child: ListView(
         children: <Widget>[
           DrawerHeader(
-            child: Text("Die Geburtstags App"),
+            child: Text("Die Geburtstags-App"),
             decoration: BoxDecoration(
               color: Colors.blue,
             ),

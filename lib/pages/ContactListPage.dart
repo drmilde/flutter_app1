@@ -1,5 +1,6 @@
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/data/DataModel.dart';
 import 'package:flutter_app1/helper/PermissionService.dart';
 
 class ContactListPage extends StatefulWidget {
@@ -27,11 +28,15 @@ class _ContactListPageState extends State<ContactListPage> {
     ps.requestContacts().then((result){
       setState(() {
         _contacts = result;
+        DataModel.clear();
 
         for (Contact value in _contacts) {
           String dn = value.displayName;
-          print("die daten sind da {$dn} \n");
+          BirthdayData bd = BirthdayData(dn, "xxxx", DateTime(1996, 09, 28));
+          DataModel.add(bd);
         }
+
+        DataModel.doPrint();
       });
     });
 
@@ -41,7 +46,6 @@ class _ContactListPageState extends State<ContactListPage> {
 
   @override
   Widget build(BuildContext context) {
-
     if (_contacts == null) {
       return Scaffold(
         appBar: AppBar(
@@ -52,7 +56,6 @@ class _ContactListPageState extends State<ContactListPage> {
         )
       );
     }
-
 
     return Scaffold(
       appBar: AppBar(

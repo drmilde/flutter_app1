@@ -111,7 +111,7 @@ class _InputPageState extends State<InputPage> {
                         showDatePicker(
                                 context: context,
                                 initialDate: DateTime.now(),
-                                firstDate: DateTime(2019),
+                                firstDate: DateTime(1900),
                                 lastDate: DateTime(2020))
                             .then<DateTime>((DateTime value) {});
                       },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/data/DataModel.dart';
 
 class BirthdayListPage extends StatefulWidget {
   const BirthdayListPage({Key key}) : super(key: key);
@@ -8,10 +9,10 @@ class BirthdayListPage extends StatefulWidget {
 }
 
 class _BirthdayListPageState extends State<BirthdayListPage> {
-  Widget _buildRow(int index) {
+  Widget _buildRow(int index, String name) {
     return ListTile(
       leading: CircleAvatar(child: Text("$index")),
-      title: Text("Geburtstag $index"),
+      title: Text("$name"),
       trailing: Icon(Icons.contacts),
     );
   }
@@ -25,10 +26,10 @@ class _BirthdayListPageState extends State<BirthdayListPage> {
       ),
       body: Center(
         child: ListView.builder(
-          itemCount: 20,
+          itemCount: DataModel.liste.length,
           padding: EdgeInsets.all(16.0),
           itemBuilder: (context, idx) {
-            return _buildRow(idx);
+            return _buildRow(idx, DataModel.elementAt(idx).geburtstag.toString());
           },
         ),
       ),

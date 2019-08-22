@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app1/widgets/CustomDrawer.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'data/DataModel.dart';
 import 'helper/PermissionService.dart';
 
 void main() => runApp(BirthdayCalenderApp());
 
+
 class BirthdayCalenderApp extends StatelessWidget {
   // This widget is the root of your application.
+  DataModel GeburtagsListe = DataModel();
 
   @override
   Widget build(BuildContext context) {
