@@ -1,5 +1,11 @@
+import 'BirthdayList.dart';
+
 class DataModel {
-  static List<BirthdayData> liste;
+  static BirthdayList liste;
+
+  static int length() {
+    return liste.length();
+  }
 
   static void add(entry) {
     liste.add(entry);
@@ -10,50 +16,15 @@ class DataModel {
   }
 
   static BirthdayData elementAt(int idx) {
-    if (liste != null) {
-      return liste.elementAt(idx);
-    }
-    return null;
+    return (liste.elementAt(idx));
   }
 
   static void doPrint() {
-    print("hallo, hallo \n");
-    print("\n");
-    for (var value in liste) {
-      String n = value.vorname;
-      print("{$n}\n");
-    }
-    print(liste.length);
+    liste.doPrint();
   }
 
   DataModel() {
-    liste = List<BirthdayData>();
+    liste = new BirthdayList();
     liste.clear();
   }
-}
-
-class BirthdayData {
-  String _vorname;
-  String _nachname;
-  DateTime _geburtstag;
-
-  String get vorname => _vorname;
-
-  set vorname(String value) {
-    _vorname = value;
-  }
-
-  String get nachname => _nachname;
-
-  set nachname(String value) {
-    _nachname = value;
-  }
-
-  DateTime get geburtstag => _geburtstag;
-
-  set geburtstag(DateTime value) {
-    _geburtstag = value;
-  }
-
-  BirthdayData(this._vorname, this._nachname, this._geburtstag);
 }

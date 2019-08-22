@@ -26,7 +26,7 @@ class _BirthdayListPageState extends State<BirthdayListPage> {
       ),
       body: Center(
         child: ListView.builder(
-          itemCount: DataModel.liste.length,
+          itemCount: DataModel.liste.length(),
           padding: EdgeInsets.all(16.0),
           itemBuilder: (context, idx) {
             return _buildRow(idx, DataModel.elementAt(idx).geburtstag.toString());
