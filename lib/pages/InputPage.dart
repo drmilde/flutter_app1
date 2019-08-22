@@ -16,6 +16,9 @@ class _InputPageState extends State<InputPage> {
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  // Controller zum setzten des Datums
+  final _textEditingController = TextEditingController();
+
   // Formularfelder
   String _vorname;
   String _nachname;
@@ -27,6 +30,7 @@ class _InputPageState extends State<InputPage> {
   String _hausnummer;
   String _ort;
 
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -35,8 +39,8 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
-    final _showSnack = (message) =>
-        _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(message)));
+    final _showSnack = (message) => _scaffoldKey.currentState
+        .showSnackBar(SnackBar(content: Text(message)));
 
     return Scaffold(
       key: _scaffoldKey,
@@ -91,6 +95,7 @@ class _InputPageState extends State<InputPage> {
                     SizedBox(
                       width: 200,
                       child: TextFormField(
+                        controller: _textEditingController,
                         textCapitalization: TextCapitalization.words,
                         decoration: InputDecoration(
                           border: UnderlineInputBorder(),
@@ -106,14 +111,20 @@ class _InputPageState extends State<InputPage> {
                       ),
                     ),
                     RaisedButton(
-                      child: Text("4"),
+                      child: Icon(Icons.calendar_today),
                       onPressed: () {
                         showDatePicker(
                                 context: context,
                                 initialDate: DateTime.now(),
                                 firstDate: DateTime(1900),
-                                lastDate: DateTime(2020))
-                            .then<DateTime>((DateTime value) {});
+                                lastDate: DateTime(2050))
+                            .then<DateTime>((DateTime value) {
+                              if (value != null) {
+                                String text =
+                                    "${value.day}.${value.month}.${value.year}";
+                                _textEditingController.text = text;
+                              }
+                        });
                       },
                     )
                   ],
