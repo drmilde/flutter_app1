@@ -2,25 +2,25 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'BirthdayList.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class BirthdayList {
-  List<BirthdayData> _liste;
+  List<BirthdayData> liste;
 
   int length() {
-    return _liste.length;
+    return liste.length;
   }
 
   void add(entry) {
-    _liste.add(entry);
+    liste.add(entry);
   }
 
   void clear() {
-    _liste.clear();
+    liste.clear();
   }
 
   BirthdayData elementAt(int idx) {
-    if (_liste != null) {
-      return _liste.elementAt(idx);
+    if (liste != null) {
+      return liste.elementAt(idx);
     }
     return null;
   }
@@ -28,46 +28,37 @@ class BirthdayList {
   void doPrint() {
     print("hallo, hallo \n");
     print("\n");
-    for (var value in _liste) {
+    for (var value in liste) {
       String n = value.vorname;
       print("{$n}\n");
     }
-    print(_liste.length);
+    print(liste.length);
   }
 
   BirthdayList() {
-    _liste = List<BirthdayData>();
-    _liste.clear();
+    liste = List<BirthdayData>();
+    liste.clear();
   }
 
+  // JSON stuff
   factory BirthdayList.fromJson(Map<String, dynamic> json) =>
       _$BirthdayListFromJson(json);
 
   Map<String, dynamic> toJson() => _$BirthdayListToJson(this);
 }
 
+@JsonSerializable()
 class BirthdayData {
-  String _vorname;
-  String _nachname;
-  DateTime _geburtstag;
+  String vorname;
+  String nachname;
+  DateTime geburtstag;
 
-  String get vorname => _vorname;
+  BirthdayData(this.vorname, this.nachname, this.geburtstag);
 
-  set vorname(String value) {
-    _vorname = value;
-  }
+  // JSON stuff
+  factory BirthdayData.fromJson(Map<String, dynamic> json) =>
+      _$BirthdayDataFromJson(json);
 
-  String get nachname => _nachname;
+  Map<String, dynamic> toJson() => _$BirthdayDataToJson(this);
 
-  set nachname(String value) {
-    _nachname = value;
-  }
-
-  DateTime get geburtstag => _geburtstag;
-
-  set geburtstag(DateTime value) {
-    _geburtstag = value;
-  }
-
-  BirthdayData(this._vorname, this._nachname, this._geburtstag);
 }

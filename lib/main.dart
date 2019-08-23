@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app1/widgets/CustomDrawer.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'data/BirthdayList.dart';
 import 'data/DataModel.dart';
 import 'helper/PermissionService.dart';
+
+import 'dart:convert';
 
 void main() => runApp(BirthdayCalenderApp());
 
@@ -40,7 +43,7 @@ class _HomePageState extends State<HomePage> {
   void _incrementCounter() {
     // increase counter
     setState(() {
-      // was inteligentes machen
+      // was intelligentes machen
     });
 
     // request contacts
@@ -50,6 +53,18 @@ class _HomePageState extends State<HomePage> {
     // open input page
     /*
     */
+  }
+  
+  
+  void _testJson() {
+    DataModel dm = new DataModel();
+
+    DataModel.add(new BirthdayData("Rebecca", "Milde", new DateTime.now()));
+    DataModel.add(new BirthdayData("Rebecca", "Milde", new DateTime.now()));
+    DataModel.add(new BirthdayData("Rebecca", "Milde", new DateTime.now()));
+
+    String jsonString = jsonEncode(DataModel.liste);
+    print(jsonString);
   }
 
   @override
@@ -78,7 +93,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        //onPressed: _incrementCounter,
+        onPressed: _testJson,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
