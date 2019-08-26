@@ -43,7 +43,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             },
           ),
           ListTile(
-            title: Text("Kontakte übernehmen"),
+            title: Text("Kontakte  übernehmen"),
             onTap: () {
               // open contacts page
               Navigator.push(context,
@@ -62,8 +62,10 @@ class _CustomDrawerState extends State<CustomDrawer> {
             title: Text("BirthdayHeaderList"),
             onTap: () {
               // open contacts page
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => BirthdayHeaderPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BirthdayHeaderPage()));
             },
           ),
           ListTile(

@@ -5,7 +5,6 @@ import 'data/BirthdayList.dart';
 import 'data/DataModel.dart';
 import 'helper/PermissionService.dart';
 
-
 void main() => runApp(BirthdayCalenderApp());
 
 class BirthdayCalenderApp extends StatelessWidget {
