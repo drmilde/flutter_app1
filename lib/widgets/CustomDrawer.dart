@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/pages/BirthayListPage.dart';
+import 'package:flutter_app1/pages/BirthdayHeaderPage.dart';
 import 'package:flutter_app1/pages/ContactListPage.dart';
 import 'package:flutter_app1/pages/InputPage.dart';
 
@@ -55,6 +56,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
               // open contacts page
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => BirthdayListPage()));
+            },
+          ),
+          ListTile(
+            title: Text("BirthdayHeaderList"),
+            onTap: () {
+              // open contacts page
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => BirthdayHeaderPage()));
             },
           ),
           ListTile(

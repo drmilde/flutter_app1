@@ -59,11 +59,12 @@ class _HomePageState extends State<HomePage> {
   void _testJson() {
     DataModel dm = new DataModel();
 
+    DataModel.add(new BirthdayData("Antonia", "Milde", new DateTime.now()));
     DataModel.add(new BirthdayData("Rebecca", "Milde", new DateTime.now()));
     DataModel.add(new BirthdayData("Rebecca", "Milde", new DateTime.now()));
     DataModel.add(new BirthdayData("Rebecca", "Milde", new DateTime.now()));
 
-    String jsonString = jsonEncode(DataModel.liste);
+    String jsonString = DataModel.toJson();
     print(jsonString);
   }
 
