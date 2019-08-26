@@ -38,7 +38,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => InputPage(
-                            title: "Input, Baby",
+                            title: "Input, baby",
                           )));
             },
           ),
