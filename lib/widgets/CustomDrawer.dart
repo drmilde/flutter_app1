@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/pages/AnimatedSplashPage.dart';
 import 'package:flutter_app1/pages/BirthayListPage.dart';
 import 'package:flutter_app1/pages/BirthdayHeaderPage.dart';
 import 'package:flutter_app1/pages/BottomNavigationBarPage.dart';
@@ -83,6 +84,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 // open contacts page
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => BottomNavigationBarPage()));
+              },
+            ),
+            ListTile(
+              title: Text("AnimatedSplashPage"),
+              onTap: () {
+                // open contacts page
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AnimatedSplashPage()));
               },
             ),
             ListTile(
