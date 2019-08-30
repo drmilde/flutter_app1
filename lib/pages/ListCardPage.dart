@@ -24,6 +24,21 @@ class _ListCardPageState extends State<ListCardPage> {
           simpleCard(),
           inkwellCard(),
           */
+          planetCard(
+            'res/images/products/tasche_00.png',
+          ),
+          planetCard(
+            'res/images/products/tasche_01.png',
+          ),
+          planetCard(
+            'res/images/products/tasche_02.png',
+          ),
+          planetCard(
+            'res/images/products/tasche_03.png',
+          ),
+          planetCard(
+            'res/images/products/tasche_04.png',
+          ),
           complexCard(
             context,
             'res/images/products/tasche_00.png',
@@ -87,59 +102,61 @@ Widget roundedCard() {
 }
 
 Widget complexCard(context, String imageAssetPath) {
-  return (Card(
-    color: Colors.amberAccent,
-    child: Column(
-      children: <Widget>[
-        SizedBox(
-          height: 180.0,
-          child: Stack(
-            children: <Widget>[
-              Positioned.fill(
-                child: Container(
-                  child: Image.asset(
-                    imageAssetPath,
+  return Container(
+    child: (Card(
+      color: Colors.lime,
+      child: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 100.0,
+            child: Stack(
+              children: <Widget>[
+                Positioned.fill(
+                  child: Container(
+                    child: Image.asset(
+                      imageAssetPath,
+                      fit: BoxFit.scaleDown,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0.0,
+                  left: 16.0,
+                  right: 16.0,
+                  child: FittedBox(
                     fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Tasche',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline
+                          .copyWith(color: Colors.black),
+                    ),
                   ),
-                ),
-              ),
-              Positioned(
-                bottom: 16.0,
-                left: 16.0,
-                right: 16.0,
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Card 4 (complex example)',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline
-                        .copyWith(color: Colors.black),
-                  ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
-        ),
-        ButtonTheme.bar(
-          child: ButtonBar(
-            alignment: MainAxisAlignment.end,
-            children: <Widget>[
-              FlatButton(
-                child: Text('SHARE'),
-                onPressed: () {},
-              ),
-              FlatButton(
-                child: Text('EXPLORE'),
-                onPressed: () {},
-              ),
-            ],
+          ButtonTheme.bar(
+            child: ButtonBar(
+              alignment: MainAxisAlignment.end,
+              children: <Widget>[
+                FlatButton(
+                  child: Text('SHARE'),
+                  onPressed: () {},
+                ),
+                FlatButton(
+                  child: Text('EXPLORE'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
-    ),
-  ));
+        ],
+      ),
+    )),
+  );
 }
 
 Widget inkwellCard() {
@@ -162,4 +179,39 @@ Widget inkwellCard() {
       ),
     ),
   ));
+}
+
+Widget planetCard(String imageAssetPath) {
+  return Card(
+    margin: EdgeInsets.all(5.0),
+    child: Stack(
+      children: <Widget>[
+        Container(
+          height: 124.0,
+          margin: new EdgeInsets.only(left: 0.0),
+          decoration: new BoxDecoration(
+            gradient: LinearGradient(colors: [Colors.lime, Colors.deepOrange]),
+            color: new Color(0xFF333366),
+            shape: BoxShape.rectangle,
+            borderRadius: new BorderRadius.circular(8.0),
+            boxShadow: <BoxShadow>[
+              new BoxShadow(
+                color: Colors.black12,
+                blurRadius: 10.0,
+                offset: new Offset(0.0, 10.0),
+              ),
+            ],
+          ),
+        ),
+        Positioned.fill(
+          child: Container(
+            child: Image.asset(
+              imageAssetPath,
+              fit: BoxFit.scaleDown,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
