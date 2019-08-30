@@ -5,6 +5,7 @@ import 'package:flutter_app1/pages/BirthdayHeaderPage.dart';
 import 'package:flutter_app1/pages/BottomNavigationBarPage.dart';
 import 'package:flutter_app1/pages/ContactListPage.dart';
 import 'package:flutter_app1/pages/InputPage.dart';
+import 'package:flutter_app1/pages/ListCardPage.dart';
 import 'package:flutter_app1/pages/SliverListPage.dart';
 
 class CustomDrawer extends StatefulWidget {
@@ -92,6 +93,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 // open contacts page
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => AnimatedSplashPage()));
+              },
+            ),
+            ListTile(
+              title: Text("ListCardPage"),
+              onTap: () {
+                // open contacts page
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ListCardPage()));
               },
             ),
             ListTile(
