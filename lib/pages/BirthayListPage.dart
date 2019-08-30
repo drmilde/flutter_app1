@@ -19,7 +19,6 @@ class _BirthdayListPageState extends State<BirthdayListPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Birthday List"),
@@ -29,7 +28,8 @@ class _BirthdayListPageState extends State<BirthdayListPage> {
           itemCount: DataModel.length(),
           padding: EdgeInsets.all(16.0),
           itemBuilder: (context, idx) {
-            return _buildRow(idx, DataModel.elementAt(idx).geburtstag.toString());
+            return _buildRow(
+                idx, DataModel.elementAt(idx).geburtstag.toString());
           },
         ),
       ),

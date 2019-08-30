@@ -1,17 +1,12 @@
-import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/pages/AnimatedSplashPage.dart';
 import 'package:flutter_app1/widgets/CustomDrawer.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import 'data/BirthdayList.dart';
 import 'data/DataModel.dart';
 import 'helper/PermissionService.dart';
 
-import 'dart:convert';
-
 void main() => runApp(BirthdayCalenderApp());
-
 
 class BirthdayCalenderApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -20,7 +15,7 @@ class BirthdayCalenderApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.system,
+      //themeMode: ThemeMode.system,
       title: 'Mach die Flutter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -55,8 +50,7 @@ class _HomePageState extends State<HomePage> {
     /*
     */
   }
-  
-  
+
   void _testJson() {
     DataModel dm = new DataModel();
 
