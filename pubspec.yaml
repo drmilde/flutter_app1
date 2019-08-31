@@ -55,6 +55,26 @@ flutter:
   - res/images/products/tasche_03.png
   - res/images/products/tasche_04.png
 
+  - res/images/fussball/logo/96x96/logo_bayer_04_leverkusen_96x96.png
+  - res/images/fussball/logo/96x96/logo_borussia_moenchengladbach._96x96.png
+  - res/images/fussball/logo/96x96/logo_bvb_dortmund_96x96.png
+  - res/images/fussball/logo/96x96/logo_fc_augsburg_96x96.png
+  - res/images/fussball/logo/96x96/logo_fc_bayern_96x96.png
+  - res/images/fussball/logo/96x96/logo_fc_koeln_96x96.png
+  - res/images/fussball/logo/96x96/logo_fc_schalke_04_96x96.png
+  - res/images/fussball/logo/96x96/logo_fc_union_96x96.png
+  - res/images/fussball/logo/96x96/logo_fortuna_duesseldorf_96x96.png
+  - res/images/fussball/logo/96x96/logo_fsv_mainz_96x96.png
+  - res/images/fussball/logo/96x96/logo_hertha_bsc_berlin_96x96.png
+  - res/images/fussball/logo/96x96/logo_rb_leipzig_96x96.png
+  - res/images/fussball/logo/96x96/logo_sc_freiburg_96x96.png
+  - res/images/fussball/logo/96x96/logo_sc_paderborn_96x96.png
+  - res/images/fussball/logo/96x96/logo_SGE_frankfurt_96x96.png
+  - res/images/fussball/logo/96x96/logo_sv_werder_bremen_96x96.png
+  - res/images/fussball/logo/96x96/logo_tsg_hoffenheim_96x96.png
+  - res/images/fussball/logo/96x96/logo_vfl_wolfsburg_96x96.png
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

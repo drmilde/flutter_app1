@@ -25,7 +25,16 @@ class _ListCardPageState extends State<ListCardPage> {
           inkwellCard(),
           */
           planetCard(
-            'res/images/products/tasche_00.png',
+            'res/images/fussball/logo/96x96/logo_bayer_04_leverkusen_96x96.png',
+          ),
+          planetCard(
+            'res/images/fussball/logo/96x96/logo_borussia_moenchengladbach._96x96.png',
+          ),
+          planetCard(
+            'res/images/fussball/logo/96x96/logo_bvb_dortmund_96x96.png',
+          ),
+          planetCard(
+            'res/images/fussball/logo/96x96/logo_fc_augsburg_96x96.png',
           ),
           planetCard(
             'res/images/products/tasche_01.png',
