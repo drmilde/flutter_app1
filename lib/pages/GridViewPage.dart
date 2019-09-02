@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/widgets/PageSelectorExample.dart';
 
 class GridViewPage extends StatefulWidget {
   @override
@@ -56,6 +57,7 @@ class _GridViewPageState extends State<GridViewPage> {
                         color: Colors.blue,
                       ),
                     ),
+                    PageSelectorExample(),
                     smallPart(),
                     smallPart(),
                     smallPart(),

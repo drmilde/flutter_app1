@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'GridViewPage.dart';
-
 class BottomNavigationBarPage extends StatefulWidget {
   @override
   _BottomNavigationBarPageState createState() =>
@@ -14,13 +12,18 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   @override
   Widget build(BuildContext context) {
     final _kTabPages = <Widget>[
-      GridViewPage().createState().pageBody(),
       Center(
           child: Icon(
-        Icons.person,
-        size: 64,
-        color: Colors.lightBlue,
-      )),
+            Icons.person,
+            size: 64,
+            color: Colors.lightBlue,
+          )),
+      Center(
+          child: Icon(
+            Icons.person,
+            size: 64,
+            color: Colors.lightBlue,
+          )),
       Center(
           child: Icon(
         Icons.calendar_view_day,
