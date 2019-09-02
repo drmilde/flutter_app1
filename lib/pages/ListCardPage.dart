@@ -14,114 +14,118 @@ class _ListCardPageState extends State<ListCardPage> {
       appBar: AppBar(
         title: Text("ListCardPage"),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(8.0),
-        children: <Widget>[
-          simpleCardRow(Colors.green, 80.0, 80.0, Text("Simple")),
-          simpleCardRow(Colors.blue, 80.0, 80.0, Text("Simple")),
-          simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.person)),
-          simpleCardRow(
-              Colors.grey.shade200, 80.0, 80.0, Icon(Icons.access_time)),
-          simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.backup)),
-          simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.clear)),
-          simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.delete)),
-          simpleCardRow(
-              Colors.grey.shade200, 80.0, 80.0, Icon(Icons.edit_location)),
-          simpleCardRow(
-              Colors.grey.shade200, 80.0, 80.0, Icon(Icons.favorite_border)),
-          simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.favorite)),
-          /*
-          inkwellCard(),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_bayer_04_leverkusen_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_borussia_moenchengladbach._96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_bvb_dortmund_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_fc_augsburg_96x96.png',
-          ),
+      body: Container(child: createListeView()),
+    );
+  }
 
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_fortuna_duesseldorf_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_fsv_mainz_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_fc_union_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_fc_schalke_04_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_fc_koeln_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_fc_bayern_96x96.png',
-          ),
+  ListView createListeView() {
+    return ListView(
+      padding: EdgeInsets.all(8.0),
+      children: <Widget>[
+        simpleCardRow(Colors.green, 80.0, 80.0, Text("Simple")),
+        simpleCardRow(Colors.blue, 80.0, 80.0, Text("Simple")),
+        simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.person)),
+        simpleCardRow(
+            Colors.grey.shade200, 80.0, 80.0, Icon(Icons.access_time)),
+        simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.backup)),
+        simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.clear)),
+        simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.delete)),
+        simpleCardRow(
+            Colors.grey.shade200, 80.0, 80.0, Icon(Icons.edit_location)),
+        simpleCardRow(
+            Colors.grey.shade200, 80.0, 80.0, Icon(Icons.favorite_border)),
+        simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.favorite)),
+        /*
+        inkwellCard(),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_bayer_04_leverkusen_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_borussia_moenchengladbach._96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_bvb_dortmund_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_fc_augsburg_96x96.png',
+        ),
 
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_hertha_bsc_berlin_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_rb_leipzig_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_sc_freiburg_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_sc_paderborn_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_SGE_frankfurt_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_sv_werder_bremen_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_tsg_hoffenheim_96x96.png',
-          ),
-          planetCard(
-            'res/images/fussball/logo/96x96/logo_vfl_wolfsburg_96x96.png',
-          ),
-          */
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_fortuna_duesseldorf_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_fsv_mainz_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_fc_union_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_fc_schalke_04_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_fc_koeln_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_fc_bayern_96x96.png',
+        ),
 
-          /*
-          planetCard(
-            'res/images/products/tasche_01.png',
-          ),
-          planetCard(
-            'res/images/products/tasche_02.png',
-          ),
-          planetCard(
-            'res/images/products/tasche_03.png',
-          ),
-          planetCard(
-            'res/images/products/tasche_04.png',
-          ),
-          complexCard(
-            context,
-            'res/images/products/tasche_00.png',
-          ),
-          complexCard(
-            context,
-            'res/images/products/tasche_01.png',
-          ),
-          complexCard(
-            context,
-            'res/images/products/tasche_02.png',
-          ),
-          complexCard(
-            context,
-            'res/images/products/tasche_03.png',
-          ),
-          */
-        ],
-      ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_hertha_bsc_berlin_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_rb_leipzig_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_sc_freiburg_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_sc_paderborn_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_SGE_frankfurt_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_sv_werder_bremen_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_tsg_hoffenheim_96x96.png',
+        ),
+        planetCard(
+          'res/images/fussball/logo/96x96/logo_vfl_wolfsburg_96x96.png',
+        ),
+        */
+
+        /*
+        planetCard(
+          'res/images/products/tasche_01.png',
+        ),
+        planetCard(
+          'res/images/products/tasche_02.png',
+        ),
+        planetCard(
+          'res/images/products/tasche_03.png',
+        ),
+        planetCard(
+          'res/images/products/tasche_04.png',
+        ),
+        complexCard(
+          context,
+          'res/images/products/tasche_00.png',
+        ),
+        complexCard(
+          context,
+          'res/images/products/tasche_01.png',
+        ),
+        complexCard(
+          context,
+          'res/images/products/tasche_02.png',
+        ),
+        complexCard(
+          context,
+          'res/images/products/tasche_03.png',
+        ),
+        */
+      ],
     );
   }
 
@@ -135,7 +139,6 @@ class _ListCardPageState extends State<ListCardPage> {
           child: InkWell(
             splashColor: Colors.blue.shade100,
             onTap: () {},
-
             child: Container(
               constraints: BoxConstraints.expand(width: width, height: height),
               child: Center(
@@ -153,6 +156,7 @@ class _ListCardPageState extends State<ListCardPage> {
       ],
     );
   }
+
 }
 
 Widget roundedCard() {

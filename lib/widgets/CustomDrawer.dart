@@ -4,6 +4,7 @@ import 'package:flutter_app1/pages/BirthayListPage.dart';
 import 'package:flutter_app1/pages/BirthdayHeaderPage.dart';
 import 'package:flutter_app1/pages/BottomNavigationBarPage.dart';
 import 'package:flutter_app1/pages/ContactListPage.dart';
+import 'package:flutter_app1/pages/GridViewPage.dart';
 import 'package:flutter_app1/pages/InputPage.dart';
 import 'package:flutter_app1/pages/ListCardPage.dart';
 import 'package:flutter_app1/pages/SliverListPage.dart';
@@ -101,6 +102,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 // open contacts page
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ListCardPage()));
+              },
+            ),
+            ListTile(
+              title: Text("GridViewPage"),
+              onTap: () {
+                // open contacts page
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GridViewPage()));
               },
             ),
             ListTile(

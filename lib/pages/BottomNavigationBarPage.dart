@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'GridViewPage.dart';
+
 class BottomNavigationBarPage extends StatefulWidget {
   @override
   _BottomNavigationBarPageState createState() =>
@@ -12,12 +14,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   @override
   Widget build(BuildContext context) {
     final _kTabPages = <Widget>[
-      Center(
-          child: Icon(
-        Icons.cake,
-        size: 64,
-        color: Colors.deepOrange,
-      )),
+      GridViewPage().createState().pageBody(),
       Center(
           child: Icon(
         Icons.person,
@@ -47,19 +44,18 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
       ),
     ];
 
-
     // sollte gleich sein, sont knallt es :)
     assert(_kBottomNavBarItems.length == _kTabPages.length);
 
-    final bottomNavBar = BottomNavigationBar (
+    final bottomNavBar = BottomNavigationBar(
       items: _kBottomNavBarItems,
       currentIndex: _currentTabIndex,
       type: BottomNavigationBarType.fixed,
       onTap: (int index) {
-         setState(() {
-           _currentTabIndex = index;
-         });
-    },
+        setState(() {
+          _currentTabIndex = index;
+        });
+      },
     );
 
     return Scaffold(
