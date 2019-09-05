@@ -12,25 +12,8 @@ class GridViewPage extends StatefulWidget {
 }
 
 class _GridViewPageState extends State<GridViewPage> {
-  final clickTiles = <Widget>[
-    SimpleCardRowWidget(80.0, 80.0, Colors.green, Text("Simple")),
-    SimpleCardRowWidget(80.0, 80.0, Colors.blue, Text("Simple")),
-    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.person)),
-    SimpleCardRowWidget(
-        80.0, 80.0, Colors.grey.shade200, Icon(Icons.access_time)),
-    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.backup)),
-    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.clear)),
-    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.delete)),
-    SimpleCardRowWidget(
-        80.0, 80.0, Colors.grey.shade200, Icon(Icons.edit_location)),
-    SimpleCardRowWidget(
-        80.0, 80.0, Colors.grey.shade200, Icon(Icons.favorite_border)),
-    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.favorite))
-  ];
-
   @override
   Widget build(BuildContext context) {
-    print(clickTiles.length);
     return Scaffold(
         appBar: AppBar(
           title: Text("GridViewPage"),
