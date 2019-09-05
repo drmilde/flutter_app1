@@ -16,7 +16,7 @@ class BoxWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
-        splashColor: Colors.white,
+        splashColor: Colors.black,
         onTap: () {},
         child: Container(
           color: _color,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/widgets/BoxWidget.dart';
+import 'package:flutter_app1/widgets/BoxWidgetInkWell.dart';
+import 'package:flutter_app1/widgets/FilledListViewWidget.dart';
 import 'package:flutter_app1/widgets/PageSelectorWidget.dart';
 import 'package:flutter_app1/widgets/SimpleCardRowWidget.dart';
 import 'package:flutter_app1/widgets/SmallBoxWidget.dart';
@@ -39,16 +41,8 @@ class _GridViewPageState extends State<GridViewPage> {
   Row pageBody() {
     return Row(
       children: <Widget>[
-        Container(
-          color: Colors.lime,
-          width: 100,
-          child: ListView.builder(
-              itemCount: clickTiles.length,
-              itemBuilder: (context, index) {
-                //return clickTiles[index];
-                return BoxWidget(70, 70, Colors.grey);
-              }),
-        ),
+        FilledListViewWidget(
+            30, 100, Colors.grey.shade400, 70, 70, Colors.indigo),
         Expanded(
           child: SingleChildScrollView(
             child: Container(
