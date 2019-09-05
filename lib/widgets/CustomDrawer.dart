@@ -7,7 +7,6 @@ import 'package:flutter_app1/pages/ContactListPage.dart';
 import 'package:flutter_app1/pages/GridViewPage.dart';
 import 'package:flutter_app1/pages/InputPage.dart';
 import 'package:flutter_app1/pages/ListCardPage.dart';
-import 'package:flutter_app1/pages/PageSelectorPage.dart';
 import 'package:flutter_app1/pages/SliverListPage.dart';
 
 class CustomDrawer extends StatefulWidget {

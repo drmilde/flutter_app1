@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app1/widgets/PageSelectorExample.dart';
+import 'package:flutter_app1/widgets/BoxWidget.dart';
+import 'package:flutter_app1/widgets/PageSelectorWidget.dart';
+import 'package:flutter_app1/widgets/SimpleCardRowWidget.dart';
+import 'package:flutter_app1/widgets/SmallBoxWidget.dart';
 
 class GridViewPage extends StatefulWidget {
   @override
@@ -8,17 +11,19 @@ class GridViewPage extends StatefulWidget {
 
 class _GridViewPageState extends State<GridViewPage> {
   final clickTiles = <Widget>[
-    simpleCardRow(Colors.green, 80.0, 80.0, Text("Simple")),
-    simpleCardRow(Colors.blue, 80.0, 80.0, Text("Simple")),
-    simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.person)),
-    simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.access_time)),
-    simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.backup)),
-    simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.clear)),
-    simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.delete)),
-    simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.edit_location)),
-    simpleCardRow(
-        Colors.grey.shade200, 80.0, 80.0, Icon(Icons.favorite_border)),
-    simpleCardRow(Colors.grey.shade200, 80.0, 80.0, Icon(Icons.favorite))
+    SimpleCardRowWidget(80.0, 80.0, Colors.green, Text("Simple")),
+    SimpleCardRowWidget(80.0, 80.0, Colors.blue, Text("Simple")),
+    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.person)),
+    SimpleCardRowWidget(
+        80.0, 80.0, Colors.grey.shade200, Icon(Icons.access_time)),
+    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.backup)),
+    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.clear)),
+    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.delete)),
+    SimpleCardRowWidget(
+        80.0, 80.0, Colors.grey.shade200, Icon(Icons.edit_location)),
+    SimpleCardRowWidget(
+        80.0, 80.0, Colors.grey.shade200, Icon(Icons.favorite_border)),
+    SimpleCardRowWidget(80.0, 80.0, Colors.grey.shade200, Icon(Icons.favorite))
   ];
 
   @override
@@ -40,7 +45,8 @@ class _GridViewPageState extends State<GridViewPage> {
           child: ListView.builder(
               itemCount: clickTiles.length,
               itemBuilder: (context, index) {
-                return clickTiles[index];
+                //return clickTiles[index];
+                return BoxWidget(70, 70, Colors.grey);
               }),
         ),
         Expanded(
@@ -57,40 +63,21 @@ class _GridViewPageState extends State<GridViewPage> {
                         color: Colors.blue,
                       ),
                     ),
-                    PageSelectorExample(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
-                    smallPart(),
+                    PageSelectorWidget(300, 200, 10),
+                    PageSelectorWidget(300, 100, 5),
+                    SmallBoxWidget(40, Colors.indigo),
+                    SmallBoxWidget(40, Colors.indigo),
+                    SmallBoxWidget(40, Colors.indigo),
+                    SmallBoxWidget(40, Colors.indigo),
+                    SmallBoxWidget(40, Colors.indigo),
+                    SmallBoxWidget(40, Colors.indigo),
+                    SmallBoxWidget(40, Colors.indigo),
                   ],
                 )),
           ),
         )
         //createSecondaryList(),
       ],
-    );
-  }
-
-  Padding smallPart() {
-    return Padding(
-      padding: EdgeInsets.all(2),
-      child: Container(
-        height: 50,
-        color: Colors.grey,
-      ),
     );
   }
 
@@ -188,35 +175,6 @@ class _GridViewPageState extends State<GridViewPage> {
       itemBuilder: (context, index) {
         return (Text(index.toString()));
       },
-    );
-  }
-
-  static Row simpleCardRow(color, width, height, content) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Card(
-          color: color,
-          // The elevation determines shade.
-          elevation: 10.0,
-          child: InkWell(
-            splashColor: Colors.blue.shade100,
-            onTap: () {},
-            child: Container(
-              constraints: BoxConstraints.expand(width: width, height: height),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    content,
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
